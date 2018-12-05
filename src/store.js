@@ -1,17 +1,17 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-// import reducers here
+import counter from './state/counter'
 
 const reducer = combineReducers({
-  // reducers here
+    counter
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export const store = createStore(
-  reducer,
-  composeEnhancers(
-    applyMiddleware(thunk)
-  )
+    reducer,
+    composeEnhancers(
+        applyMiddleware(thunk)
+    )
 )
